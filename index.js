@@ -1,9 +1,13 @@
-const turnos = ["", "Todo el día", "Entrar velada", "Salir velada", "Todo el día"];
+const turnos = ["", "Todo el día", "Entrar a velada", "Salir de velada", "todo el día", "Entrar a velada"];
 const hoy = new Date();
 document.getElementById('fecha').value = hoy.getFullYear()+"-"+(hoy.getMonth() + 1)+"-"+hoy.getDate();
 document.getElementById('fecha').min = hoy.getFullYear()+"-"+(hoy.getMonth() + 1)+"-"+hoy.getDate();
 const restultado = document.getElementById('resultado');
-restultado.innerText = turnos[1];
+
+
+asignarTurno = (turno) => restultado.innerText = "Turno: " + turnos[turno];
+
+asignarTurno(1);
 
 function turno() {
     const turno = document.getElementById('turno').value;
@@ -14,5 +18,5 @@ function turno() {
     const diff = fechaTurno - hoySinHoras;
     const diffDys = diff / (1000*60*60*24);
     const siguieteTurno = (diffDys % 3) + (+turno);
-    restultado.innerText = turnos[siguieteTurno];
+    asignarTurno(siguieteTurno);
 }

@@ -7,18 +7,19 @@
 body {
   font-family: sans-serif;
   background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,0.8547794117647058) 11%, rgba(0,0,255,1) 43%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(90deg, rgba(2,0,36,0.8547794117647058) 11%, rgba(0,0,255,1) 43%, rgba(0, 213, 255, 0.795) 100%);
 }
 
 h4 {
   font-size: 22px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 p {
+  margin-top: 10px;
   height: 40px;
-  text-align: center;
-  font-size: 26px;
+  font-size: 30px;
   line-height: 40px;
 }
 
