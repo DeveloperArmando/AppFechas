@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon">
+    <title>App Santiago</title>
+  </head>
+  <body>
+    <section class="form-register">
+      <h4>¿Que turno me toca?</h4>
+      <label for="turno">Selecciona el turno que tienes hoy</label>
+      <select class="controls" name="turno" id="turno" onchange="turno()">
+        <option value="1">Todo el día</option>
+        <option value="2">Entro a velada</option>
+        <option value="3">Salgo de velada</option>
+      </select>
+      <br />
+      <label for="fecha">Selecciona la fecha que quieres saber</label>
+      <input
+        class="controls"
+        type="date"
+        name="fecha"
+        id="fecha"
+        onclick="this.showPicker()"
+        onchange="turno()"
+      />
+      <br />
+      <p id="resultado"></p>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>
