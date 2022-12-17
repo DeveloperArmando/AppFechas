@@ -2,12 +2,13 @@ const turnos = ["", "Todo el día", "Entrar a velada", "Salir de velada", "todo 
 const hoy = new Date();
 document.getElementById('fecha').value = hoy.getFullYear()+"-"+(hoy.getMonth() + 1)+"-"+hoy.getDate();
 document.getElementById('fecha').min = hoy.getFullYear()+"-"+(hoy.getMonth() + 1)+"-"+hoy.getDate();
+document.getElementById('turno').value = 3;
 const restultado = document.getElementById('resultado');
 
 
 asignarTurno = (turno) => restultado.innerText = "Turno: " + turnos[turno];
 
-asignarTurno(1);
+asignarTurno(3);
 
 function turno() {
     const turno = document.getElementById('turno').value;
