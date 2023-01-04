@@ -1,7 +1,7 @@
 const turnos = ["", "Todo el día", "Entrar a velada", "Salir de velada", "todo el día", "Entrar a velada"];
 const hoy = new Date();
-document.getElementById('fecha').value = hoy.getFullYear()+"-"+(hoy.getMonth() + 1)+"-"+hoy.getDate();
-document.getElementById('fecha').min = hoy.getFullYear()+"-"+(hoy.getMonth() + 1)+"-"+hoy.getDate();
+document.getElementById('fecha').value = hoy.getFullYear()+(hoy.getMonth() >= 10 ? "-" : "-0")+(hoy.getMonth() + 1)+(hoy.getDate() >= 10 ? "-" : "-0")+hoy.getDate();
+document.getElementById('fecha').min = hoy.getFullYear()+(hoy.getMonth() >= 10 ? "-" : "-0")+(hoy.getMonth() + 1)+(hoy.getDate() >= 10 ? "-" : "-0")+hoy.getDate();
 document.getElementById('turno').value = 3;
 const restultado = document.getElementById('resultado');
 
@@ -14,7 +14,7 @@ function turno() {
     const turno = document.getElementById('turno').value;
     const fecha = document.getElementById('fecha').value;
     const fechaSplit = fecha.split('-');    
-    const fechaHoySinHoras = new Date(hoy.getFullYear()+"-"+(hoy.getMonth() + 1)+(hoy.getDate() >= 10 ? "-" : "-0")+hoy.getDate()+ "T00:00:00.000Z")
+    const fechaHoySinHoras = new Date(hoy.getFullYear()+((hoy.getMonth() + 1) >= 10 ? "-" : "-0")+(hoy.getMonth() + 1)+(hoy.getDate() >= 10 ? "-" : "-0")+hoy.getDate()+ "T00:00:00.000Z")
     const fechaTurno = new Date(!fecha ? fechaHoySinHoras : fechaSplit[0]+"-"+fechaSplit[1]+"-"+fechaSplit[2]+ "T00:00:00.000Z");
     const diff = fechaTurno - fechaHoySinHoras;
     const diffDys = diff / (1000*60*60*24);
